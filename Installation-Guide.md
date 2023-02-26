@@ -15,7 +15,7 @@ This guide is tested on Ubuntu 20.04
 ### Pre-requisites
 
 ```
-Python 3.10+ (For Frappe v14)
+Python 3.10+ (For v14) / Python 3.7 (For v12)
 Node.js 16
 Redis 6                                       (caching and realtime updates)
 MariaDB 10.6.6+                               (Database backend)
