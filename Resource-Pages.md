@@ -1,3 +1,7 @@
+# ParaLogic Fork of Frappe
+
+**Resource Pages**
+
 * [Frappe Architecture](https://frappeframework.com/docs/v14/user/en/basics/architecture)
 * **[Installation Guide](https://github.com/ParaLogicTech/frappe/wiki/Installation-Guide)**
 * [Frappe Documentation](https://frappeframework.com/docs/v14/user/en/introduction)
