@@ -10,7 +10,9 @@ This guide assumes you are using a personal computer, VPS or a bare-metal server
 
 1. Debian / Ubuntu
 
-## Pre-requisites
+This guide is tested on Ubuntu 20.04
+
+### Pre-requisites
 
 ```
 Python 3.10+ (v14)
@@ -41,7 +43,7 @@ sudo apt install curl
 **Install Python** (python3.10+)
 
 ```bash
-sudo apt install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils python3.10-venv
+sudo apt install python3 python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils python3.10-venv
 ```
 
 **Install Redis Server**
@@ -62,6 +64,7 @@ We recommend installing node using [nvm](https://github.com/creationix/nvm)
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.bashrc
 ```
 
 After nvm is installed, you may have to close your terminal and open another one. Now run the following command to install node.
@@ -79,7 +82,7 @@ node -v
 **Install yarn using `npm`**
 
 ```bash
-sudo npm install -g yarn
+npm install -g yarn
 ```
 
 **Install wkhtmltopdf**
@@ -87,13 +90,17 @@ sudo npm install -g yarn
 Download wkhtmltopdf dependencies and fonts
 
 ```bash
-sudo apt install xvfb libfontconfig
+sudo apt install xvfb libfontconfig xfonts-75dpi
 ```
 
 Download wkhtmltopdf from https://wkhtmltopdf.org/downloads.html
 
 Ubuntu 22.04 amd64 file
 
+```bash
+curl https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb -L -o wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+```
 https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 
 ## Install and Configure MariaDB
@@ -103,13 +110,13 @@ https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_
 If you are on version Ubuntu 20.04, then MariaDB is available in default repo and you can directly run the below commands to install it:
 
 ```bash
-sudo apt install mariadb-server
+sudo apt install mariadb-server-10.6
 ```
 
 During this installation you'll be prompted to set the MySQL root password. If you are not prompted, you'll have to initialize the MySQL server setup yourself. You can do that by running the command:
 
 ```bash
-mysql_secure_installation
+sudo mysql_secure_installation
 ```
 
 > Remember: only run it if you're not prompted the password during setup.
@@ -123,7 +130,7 @@ sudo apt install mariadb-client
 Now, edit the MariaDB configuration file.
 
 ```bash
-nano /etc/mysql/mariadb.cnf
+sudo nano /etc/mysql/mariadb.cnf
 ```
 
 And add this configuration at the END of the file
@@ -141,7 +148,7 @@ default-character-set = utf8mb4
 Now, just restart the mysql service and you are good to go.
 
 ```bash
-sudo service mysql restart
+sudo service mariadb status
 ```
 
 
@@ -150,7 +157,7 @@ sudo service mysql restart
 Install bench via pip3
 
 ```bash
-pip3 install frappe-bench
+sudo pip3 install frappe-bench
 ```
 
 Confirm the bench installation by checking version
@@ -159,22 +166,87 @@ Confirm the bench installation by checking version
 bench --version
 ```
 
-## Setup a new bench
+## Setup a new bench environment
 
-Create your first bench folder.
+Create a directory for all frappe projects
 
 ```bash
 cd ~
 mkdir frappe
 cd frappe
-bench init frappe-bench
+```
+
+Create your first bench environment / folder
+
+```bash
+bench init frappe-bench --frappe-path https://github.com/ParaLogicTech/frappe.git --frappe-branch version-14 --python python3.10
 cd frappe-bench
 ```
 
-After the frappe-bench folder is created, change your directory to it and run this command
+After the frappe-bench folder is created, download frappe applications (optional)
+
+```bash
+bench get-app payments
+bench get-app https://github.com/ParaLogicTech/erpnext.git --branch version-14
+```
+
+Setup a new site (database)
+
+```bash
+bench new-site paralogic.v14 --db-name paralogic_v14_erp
+```
+
+Add site in `hosts` file
+
+```bash
+sudo nano /etc/hosts
+```
+
+and add the line
+
+```
+127.0.0.1       paralogic.v14
+```
+
+Set the `paralogic.v14` site as the default site for this bench
+
+```bash
+bench use paralogic.v14
+```
+
+Install applications on site `paralogic.v14`
+
+```bash
+bench install-app erpnext
+```
+
+## Start bench (development mode)
+
+While inside your bench directory you can run bench commands. To start the bench servers run the command 
 
 ```bash
 bench start
 ```
 
-Congratulations, you have installed bench on to your system.
+After starting the bench you will see that web server will be running on port 8000 or higher
+```
+22:46:32 web.1            |  * Running on all addresses (0.0.0.0)
+22:46:32 web.1            |  * Running on http://127.0.0.1:8000
+22:46:32 web.1            |  * Running on http://10.0.2.15:8000
+```
+
+Access the site using a web browser from the hostname you set in hosts file
+
+```
+http://paralogic.v14:8000
+```
+
+Congratulations, your bench is now installed and working on your system.
+
+## Enable developer_mode configuration
+
+```bash
+nano sites/common_site_config.json
+```
+
+Change `developer_mode` value to `1`
