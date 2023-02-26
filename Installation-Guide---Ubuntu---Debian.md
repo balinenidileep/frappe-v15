@@ -26,16 +26,22 @@ NGINX                                         (proxying multitenant sites in pro
 
 ## Install Required Packages
 
-**Install Git**
+**Install `git`**
 
 ```bash
 sudo apt install git
 ```
 
+**Install `curl`**
+
+```bash
+sudo apt install curl
+```
+
 **Install Python** (python3.10+)
 
 ```bash
-sudo apt-get install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils python3.10-venv
+sudo apt install python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils python3.10-venv
 ```
 
 **Install Redis Server**
@@ -78,9 +84,17 @@ sudo npm install -g yarn
 
 **Install wkhtmltopdf**
 
+Download wkhtmltopdf dependencies and fonts
+
+```bash
+sudo apt install xvfb libfontconfig
 ```
-apt-get install xvfb libfontconfig wkhtmltopdf
-```
+
+Download wkhtmltopdf from https://wkhtmltopdf.org/downloads.html
+
+Ubuntu 22.04 amd64 file
+
+https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
 
 ## Install and Configure MariaDB
 
