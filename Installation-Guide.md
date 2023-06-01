@@ -196,6 +196,12 @@ Setup a new site (database)
 bench new-site paralogic.v14 --db-name paralogic_v14_erp
 ```
 
+Set the `paralogic.v14` site as the default site for this bench
+
+```bash
+bench use paralogic.v14
+```
+
 Add site in `hosts` file
 
 ```bash
@@ -207,11 +213,9 @@ and add the line
 ```
 127.0.0.1       paralogic.v14
 ```
-
-Set the `paralogic.v14` site as the default site for this bench
-
+or use bench command
 ```bash
-bench use paralogic.v14
+bench add-to-hosts
 ```
 
 Install applications on site `paralogic.v14`
