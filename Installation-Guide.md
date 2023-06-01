@@ -148,7 +148,7 @@ default-character-set = utf8mb4
 Now, just restart the mysql service and you are good to go.
 
 ```bash
-sudo service mariadb status
+sudo service mariadb restart
 ```
 
 
