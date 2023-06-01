@@ -213,7 +213,7 @@ and add the line
 ```
 127.0.0.1       paralogic.v14
 ```
-or use bench command
+or use bench command to add site to hosts file
 ```bash
 bench add-to-hosts
 ```
