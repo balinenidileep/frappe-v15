@@ -254,3 +254,7 @@ nano sites/common_site_config.json
 ```
 
 Change `developer_mode` value to `1`
+or use bench command to enable developer_mode
+```bash
+bench set-config developer_mode 1
+```
