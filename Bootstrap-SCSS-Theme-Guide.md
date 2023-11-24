@@ -1,12 +1,10 @@
-## Bootstrap Theme SCSS Structure
-
 Our main website stylesheet is built by theming, customizing and compiling bootstrap v4.5+ using SCSS. Frappe provides ESBuild for bundling SCSS and JavaScript files that will compile our SCSS files. 
 
 * Create a directory for SCSS files `public/paralogic_web/scss/paralogic_theme/`
 * Keep the directory organized into multiple files: `type.scss`, `buttons.scss`, `forms.scss`, `utils.scss`, ...
 * Create a bundle file `public/paralogic_web/scss/paralogic_theme.bundle.scss`
 
-### Bundle File
+## Bundle File
 
 * Override Bootstrap variables
 * `@import "frappe/public/scss/website"` to import frappe's SCSS files along with Bootstrap SCSS files
@@ -20,18 +18,18 @@ website_context = {
 }
 ```
 
-### Bootstrap Variables Reference
+## Bootstrap Variables Reference
 
 * Refer to https://github.com/twbs/bootstrap/blob/v4.5.0/scss/_variables.scss for a list of all bootstrap's SCSS variables
 * Refer to https://github.com/twbs/bootstrap/blob/v4.5.0/scss/_root.scss for a list of all boostrap's *CSS* :root variables
 
-### Common Option Variables
+## Common Option Variables
 
 * `$enable-rounded` for border radius on common elements
 * `$enable-shadows`
 * `$enable-gradients`
 
-### Colors Variables
+## Colors Variables
 
 Bootstrap have the following variables which also become part of your CSS :root variables. The important color list variables are `$colors`, `$theme-colors` and `$grays`. We strongly recommend to use color CSS variables instead of hard coding them. 
 
@@ -48,7 +46,7 @@ Bootstrap have the following variables which also become part of your CSS :root 
 * Muted/Disabled Text Color: `$text-muted`
 * Placeholder Color: `$placeholder` (To be implemented)
 
-### Fonts and Typography Variables
+## Fonts and Typography Variables
 
 * You should create a separate font CSS directory and file for letting the browser down the fonts using [Transfonter](https://transfonter.org/)
 * Make sure to include your font css in `hooks.py` `web_include_css`
@@ -58,19 +56,19 @@ Bootstrap have the following variables which also become part of your CSS :root 
 * Headings Font: you may define `$headings-font-family` (for example `$font-family-serif` for headings)
 * Always define font sizes in rem
 
-### Navbar Variables
+## Navbar Variables
 
 * Padding: `$navbar-padding-x`, `$navbar-padding-y`
 * `$navbar-light-color`, `$navbar-light-hover-color`, `$navbar-light-active-color`, `$navbar-light-disabled-color`, `$navbar-light-toggler-icon-bg`, `$navbar-light-toggler-border-color` (replace `-light-` with `-dark-` for dark navbar)
 
-### Card Variables
+## Card Variables
 
 * `$card-spacer-y`, `$card-spacer-x`
 * `$card-border-radius`
 * `$card-border-color`
 * `$card-bg`
 
-### Miscellaneous Variables
+## Miscellaneous Variables
 
 * Common Border Radius: `$border-radius`, `$border-radius-lg`, `$border-radius-sm`
 * Common Shadows: `$box-shadow`, `$box-shadow-sm`, `$box-shadow-lg`
