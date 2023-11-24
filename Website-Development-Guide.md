@@ -39,7 +39,7 @@ See [Bootstrap SCSS Theme Guide](https://github.com/ParaLogicTech/frappe/wiki/Bo
 
 ## Web Page HTML/Jinja Structure
 
-HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by Jinja as templating engine. Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating the context variables. Context variables can be to generate dynamic content for the web pages.
+HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by [Jinja (template engine)](https://jinja.palletsprojects.com/). Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating context variables. Context variables can be to generate dynamic content for the web pages.
 
 See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web-Page-HTML-Jinja-Guide) for details on how to create web pages and integrate them with Frappe's Jinja base templates
 
