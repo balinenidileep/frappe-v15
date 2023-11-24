@@ -12,10 +12,6 @@ Create a new frappe app using `bench new-app` and enter relevant information whe
 * Create a git repository (on GitHub) and push to the repository
 * For this guide we will assume we are creating an app called `paralogic_web`
 
-## Create a Bootstrap SCSS Theme
-
-See [Bootstrap SCSS Theme Guide](https://github.com/ParaLogicTech/frappe/wiki/Bootstrap-SCSS-Theme-Guide) for details on how to create and implement a Bootstrap Theme Stylesheet
-
 ## Assets
 
 Keep your assets organized in your app's `public/` directory. You can access your assets using the directory: `/assets/paralogic_home/...` Always use absolute URLs for linking your assets or web pages starting with `/`. For example `/assets/paralogic_home/logo/logo.png` instead of `assets/paralogic_home/logo/logo.png`
@@ -35,24 +31,19 @@ Keep your assets organized in your app's `public/` directory. You can access you
 * public/js/fullpage/...
 * public/js/aos/...
 
-## Web Page Structure
+## Bootstrap SCSS Theme Structure
+
+Our main website stylesheet is built by theming, customizing and compiling bootstrap v4.5+ using SCSS. Frappe provides ESBuild for bundling SCSS and JavaScript files that will compile our SCSS files.
+
+See [Bootstrap SCSS Theme Guide](https://github.com/ParaLogicTech/frappe/wiki/Bootstrap-SCSS-Theme-Guide) for details on how to create and implement a Bootstrap Theme Stylesheet
+
+## Web Page HTML/Jinja Structure
 
 Web Pages can be created by creating files inside your app's `www` directory. HTML files are treated as Jinja templates. Python files are treated as backend scripts to update the context variables for HTML files.
 
-For example to create an "About Us" page you can create the files `www/about.html` and `www/about.py` which can then be accessed by https://paralogic.io/about.
+See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web-Page-HTML-Jinja-Guide) for details on how to create web pages and integrate with Frappe
 
-* HTML files should extend `{% extends "templates/web.html" %}`
-* HTML files should have the following blocks: `{% block style %}`, `{% block hero %}`, `{% block page_content %}`, `{% block navbar %}`, `{% block script %}`
-* Python files should contain a `def get_context(context)` method that will update the `context` dict variables used in the HTML file
-
-## Create Home Page
-
-* Create file `www/paralogic_home.html`
-* Create file `www/paralogic_home.py`
-* Add `home_page = "paralogic_home"` in `hooks.py` (user can also change the home page in Website Settings)
-
-## Navbar
-...
+..
 
 ## Favicon
 ...
