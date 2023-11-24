@@ -1,12 +1,12 @@
 ## Web Page Structure
 
-Web Pages can be created by creating files inside your app's `www` directory. HTML files are treated as Jinja templates. Python files are treated as backend scripts to update the context variables for HTML files.
+HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by [Jinja (template engine)](https://jinja.palletsprojects.com/). Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating context variables. Context variables can be to generate dynamic content for the web pages.
 
 For example to create an "About Us" page you can create the files `www/about.html` and `www/about.py` which can then be accessed by https://paralogic.io/about.
 
 * HTML files should extend `{% extends "templates/web.html" %}`
-* HTML files should have the following blocks: `{% block style %}`, `{% block hero %}`, `{% block page_content %}`, `{% block navbar %}`, `{% block script %}`
-* Python files should contain a `def get_context(context)` method that will update the `context` dict variables used in the HTML file
+* HTML files should have the following blocks: `{% block style %}`, `{% block page_content %}`, `{% block script %}`
+* Python files should contain a `def get_context(context)` method that will update the `context` dict variables to be used in the HTML/Jinja files
 
 ## Create Home Page
 
