@@ -62,13 +62,13 @@ Bootstrap have the following variables which also become part of your CSS :root 
 * Font Family: always define `$font-family-sans-serif` along with fallback font similar to actual font
 * Headings Size: `$h1-font-size`, ..., `$h6-font-size`
 * Headings Margin Bottom: `$headings-margin-bottom`
-* Headings Font: you may define $headings-font-family (for example `$font-family-serif` for headings)
+* Headings Font: you may define `$headings-font-family` (for example `$font-family-serif` for headings)
 * Always define font sizes in rem
 
 ### Bootstrap Theme Variables - Navbar
 
 * Padding: `$navbar-padding-x`, `$navbar-padding-y`
-* $navbar-light-color $navbar-light-hover-color $navbar-light-active-color $navbar-light-disabled-color, $navbar-light-toggler-icon-bg $navbar-light-toggler-border-color (replace light with dark for dark navbar)
+* `$navbar-light-color`, `$navbar-light-hover-color`, `$navbar-light-active-color`, `$navbar-light-disabled-color`, `$navbar-light-toggler-icon-bg`, `$navbar-light-toggler-border-color` (replace `-light-` with `-dark-` for dark navbar)
 
 ### Bootstrap Theme Variables - Cards
 
