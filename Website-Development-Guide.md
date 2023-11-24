@@ -33,7 +33,7 @@ Keep your assets organized in your app's `public/` directory. You can access you
 
 ## Bootstrap SCSS Theme Structure
 
-Your main website stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
+Your website's main stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
 
 See [Bootstrap SCSS Theme Guide](https://github.com/ParaLogicTech/frappe/wiki/Bootstrap-SCSS-Theme-Guide) for details on how to create and implement a Bootstrap Theme Stylesheet
 
