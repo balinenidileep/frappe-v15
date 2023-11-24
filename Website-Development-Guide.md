@@ -31,6 +31,21 @@ Keep your assets organized in your app's `public/` directory. You can access you
 * public/js/fullpage/...
 * public/js/aos/...
 
+## Build System
+
+Frappe bundles and builds JavaScript, SCSS, Markdown and other various file types using ESBuild. Bundle files can be created anywhere in the `public/` directory by naming them with a `.bundle.` in the middle like `paralogic_theme.bundle.scss` or `swiper.bundle.js`. All bundle files are built by running the bench commands:
+
+* `bench update`
+* `bench build`
+
+Bundle files are also watched and built automatically when any of the files have changed while the development server is running. The compiled/generated files are named with a hash string in the middle like  `paralogic_theme.bundle.ABC123XYZ.css` in order to prevent the browser from using outdated/cached files.
+
+To use or find the most recent compiled version of the bundle file we have multiple utility methods/Jinja filters
+
+* `bundled_asset("about.bundle.css")` that returns the URL to the most recent built file
+* `include_style("paralogic_theme.bundle.css")` that writes `<link href="...">
+* `include_script("swiper.bundle.js")` that writes `<script src="...">
+
 ## Bootstrap SCSS Theme Structure
 
 Your website's main stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
@@ -43,8 +58,34 @@ HTML Web Pages can be created by creating files inside your app's `www` director
 
 See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web-Page-HTML-Jinja-Guide) for details on how to create web pages and integrate them with Frappe's Jinja base templates
 
+## Page Python Structure
+...
+
+## JavaScript Utilities
+...
+
+## CMS Settings
+...
+
 ## Favicon
 ...
 
 ## Images
 ...
+
+## SEO
+...
+
+## Reusable Code
+...
+
+## Clean Code
+...
+
+## Naming Convention
+filename/variable names/doctype names
+
+## Coding Convention
+tab/spaces...
+
+
