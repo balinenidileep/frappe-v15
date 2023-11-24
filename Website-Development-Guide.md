@@ -18,7 +18,7 @@ Our main website stylesheet is built by theming, customizing and compiling boots
 
 * Create a directory for SCSS files `public/paralogic_web/scss/paralogic_theme/`
 * Keep the directory organized into multiple files: `type.scss`, `buttons.scss`, `forms.scss`, `utils.scss`, ...
-* Create a bundle file `public/paralogic_web/scss/paralogic_theme.bundle.css`
+* Create a bundle file `public/paralogic_web/scss/paralogic_theme.bundle.scss`
 
 ### Bundle File
 
@@ -26,7 +26,13 @@ Our main website stylesheet is built by theming, customizing and compiling boots
 * `@import "frappe/public/scss/website"` to import frappe's SCSS files along with Bootstrap SCSS files
 * Set CSS `:root` variables
 * Import all your SCSS files from `public/paralogic_web/scss/paralogic_theme/` in your bundle file
-* Add `custom_theme_bundle = "paralogic_theme.bundle.scss"` in `hooks.py` so that Frappe uses this as the theme CSS file
+* Add `custom_theme_bundle` by defining/updating `website_context` in `hooks.py` 
+
+```python
+website_context = {
+	"custom_theme_bundle": "paralogic_theme.bundle.css",
+}
+```
 
 ### Bootstrap Variables Reference
 
@@ -85,3 +91,30 @@ Bootstrap have the following variables which also become part of your CSS :root 
 * Define if using tabs or other components: `$component-active-bg`, `$component-active-color`
 * Common Transition: `$transition-base`, `$transition-fade`, `$transition-collapse`
 
+## Assets
+
+Keep your assets organized in the `public/` directory
+
+* public/images/
+* public/images/logo/
+* public/images/background/
+* public/images/illustrations/
+* public/images/icons/
+* public/images/icons/
+* public/videos/...
+* public/css/
+* public/css/fonts/
+* public/css/fonts/roboto/...
+* public/scss/
+* public/js/
+* public/js/fullpage/...
+* public/js/aos/...
+
+## Navbar
+...
+
+## Create Home Page
+
+* Create file `www/paralogic_home.html` with blocks
+* Create file `www/paralogic_home.py` and define `def get_context()` to set dynamic content
+* Add `home_page = "paralogic_home"` in `hooks.py`
