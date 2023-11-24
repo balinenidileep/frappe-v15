@@ -17,33 +17,31 @@ Create a new frappe app using `bench new-app` and enter relevant information whe
 Keep your assets organized in your app's `public/` directory. You can access your assets using the directory: `/assets/paralogic_home/...` Always use absolute URLs for linking your assets or web pages starting with `/`. For example `/assets/paralogic_home/logo/logo.png` instead of `assets/paralogic_home/logo/logo.png`
 
 * public/images/
-* public/images/logo/
-* public/images/background/
-* public/images/illustrations/
-* public/images/icons/
-* public/images/icons/
+* public/images/logo/...
+* public/images/background/...
+* public/images/illustrations/...
+* public/images/icons/...
 * public/videos/...
 * public/css/
 * public/css/fonts/
 * public/css/fonts/roboto/...
 * public/scss/
+* public/scss/paralogic_theme/...
 * public/js/
 * public/js/fullpage/...
 * public/js/aos/...
 
 ## Bootstrap SCSS Theme Structure
 
-Our main website stylesheet is built by theming, customizing and compiling bootstrap v4.5+ using SCSS. Frappe provides ESBuild for bundling SCSS and JavaScript files that will compile our SCSS files.
+Your main website stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
 
 See [Bootstrap SCSS Theme Guide](https://github.com/ParaLogicTech/frappe/wiki/Bootstrap-SCSS-Theme-Guide) for details on how to create and implement a Bootstrap Theme Stylesheet
 
 ## Web Page HTML/Jinja Structure
 
-Web Pages can be created by creating files inside your app's `www` directory. HTML files are treated as Jinja templates. Python files are treated as backend scripts to update the context variables for HTML files.
+HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by Jinja as templating engine. Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating the context variables. Context variables can be to generate dynamic content for the web pages.
 
-See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web-Page-HTML-Jinja-Guide) for details on how to create web pages and integrate with Frappe
-
-..
+See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web-Page-HTML-Jinja-Guide) for details on how to create web pages and integrate them with Frappe's Jinja base templates
 
 ## Favicon
 ...
