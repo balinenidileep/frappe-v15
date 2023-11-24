@@ -1,8 +1,8 @@
-Our main website stylesheet is built by theming, customizing and compiling bootstrap v4.5+ using SCSS. Frappe provides ESBuild for bundling SCSS and JavaScript files that will compile our SCSS files. 
+Our main website stylesheet is built by customizing, themeing and compiling bootstrap v4.5+ using ESBuild to build and bundle SCSS files. Additionally Frappe also extends Bootstrap with it's own variables and styling.
 
 * Create a directory for SCSS files `public/paralogic_web/scss/paralogic_theme/`
-* Keep the directory organized into multiple files: `type.scss`, `buttons.scss`, `forms.scss`, `utils.scss`, ...
-* Create a bundle file `public/paralogic_web/scss/paralogic_theme.bundle.scss`
+* Keep the directory organized by splitting into multiple SCSS files: `type.scss`, `buttons.scss`, `forms.scss`, `utils.scss`, ...
+* Create a bundle file `public/paralogic_web/scss/paralogic_theme.bundle.scss` (this will be built into a CSS file by Frappe/ESBuild)
 
 ## Bundle File
 
