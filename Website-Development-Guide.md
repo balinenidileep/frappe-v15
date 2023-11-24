@@ -25,7 +25,7 @@ Our main website stylesheet is built by theming, customizing and compiling boots
 * Override Bootstrap variables
 * `@import "frappe/public/scss/website"` to import frappe's SCSS files along with Bootstrap SCSS files
 * Set CSS `:root` variables
-* Import all your SCSS files in `public/paralogic_web/scss/paralogic_theme/`
+* Import all your SCSS files from `public/paralogic_web/scss/paralogic_theme/` in your bundle file
 
 ### Bootstrap Theme Variables - Reference
 
@@ -53,15 +53,17 @@ Bootstrap have the following variables which also become part of your CSS :root 
 * Border Color: `$border-color` (defaults to $gray-900)
 * Headings Color: `$headings-color`
 * Muted/Disabled Text Color: `$text-muted`
+* Placeholder Color: `$placeholder` (To be implemented)
 
 ### Bootstrap Theme Variables - Fonts and Typography
 
-* You should create a separate font CSS directory and file for letting the browser down the fonts using the tool: TBD
+* You should create a separate font CSS directory and file for letting the browser down the fonts using [Transfonter](https://transfonter.org/)
 * Make sure to include your font css in `hooks.py` `web_include_css`
 * Font Family: always define `$font-family-sans-serif` along with fallback font similar to actual font
 * Headings Size: `$h1-font-size`, ..., `$h6-font-size`
 * Headings Margin Bottom: `$headings-margin-bottom`
 * Headings Font: you may define $headings-font-family (for example `$font-family-serif` for headings)
+* Always define font sizes in rem
 
 ### Bootstrap Theme Variables - Navbar
 
