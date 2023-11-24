@@ -18,7 +18,7 @@ Our main website stylesheet is built by theming, customizing and compiling boots
 
 * Create a directory for SCSS files `public/paralogic_web/scss/paralogic_theme/`
 * Keep the directory organized into multiple files: `type.scss`, `buttons.scss`, `forms.scss`, `utils.scss`, ...
-* Create a bundle file `public/paralogic_web/scss/paralogic_theme.bundle.scss`
+* Create a bundle file `public/paralogic_web/scss/paralogic_theme.bundle.css`
 
 ### Bundle File
 
@@ -26,6 +26,7 @@ Our main website stylesheet is built by theming, customizing and compiling boots
 * `@import "frappe/public/scss/website"` to import frappe's SCSS files along with Bootstrap SCSS files
 * Set CSS `:root` variables
 * Import all your SCSS files from `public/paralogic_web/scss/paralogic_theme/` in your bundle file
+* Add `custom_theme_bundle = "paralogic_theme.bundle.scss"` in `hooks.py` so that Frappe uses this as the theme CSS file
 
 ### Bootstrap Variables Reference
 
