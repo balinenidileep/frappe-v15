@@ -93,7 +93,7 @@ Bootstrap have the following variables which also become part of your CSS :root 
 
 ## Assets
 
-Keep your assets organized in the `public/` directory
+Keep your assets organized in your app's `public/` directory. You can access your assets using the directory: `/assets/paralogic_home/...` Always use absolute URLs for linking your assets or web pages starting with `/`. For example `/assets/paralogic_home/logo/logo.png` instead of `assets/paralogic_home/logo/logo.png`
 
 * public/images/
 * public/images/logo/
@@ -110,11 +110,27 @@ Keep your assets organized in the `public/` directory
 * public/js/fullpage/...
 * public/js/aos/...
 
-## Navbar
-...
+## Web Page Structure
+
+Web Pages can be created by creating files inside your app's `www` directory. HTML files are treated as Jinja templates. Python files are treated as backend scripts to update the context variables for HTML files.
+
+For example to create an "About Us" page you can create the files `www/about.html` and `www/about.py` which can then be accessed by https://paralogic.io/about.
+
+* HTML files should extend `{% extends "templates/web.html" %}`
+* HTML files should have the following blocks: `{% block style %}`, `{% block hero %}`, `{% block page_content %}`, `{% block navbar %}`, `{% block script %}`
+* Python files should contain a `def get_context(context)` method that will update the `context` dict variables used in the HTML file
 
 ## Create Home Page
 
-* Create file `www/paralogic_home.html` with blocks
-* Create file `www/paralogic_home.py` and define `def get_context()` to set dynamic content
-* Add `home_page = "paralogic_home"` in `hooks.py`
+* Create file `www/paralogic_home.html`
+* Create file `www/paralogic_home.py`
+* Add `home_page = "paralogic_home"` in `hooks.py` (user can also change the home page in Website Settings)
+
+## Navbar
+...
+
+## Favicon
+...
+
+## Images
+...
