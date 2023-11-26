@@ -60,8 +60,24 @@ HTML Web Pages can be created by creating files inside your app's `www` director
 
 See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web-Page-HTML-Jinja-Guide) for details on how to create web pages and integrate them with Frappe's Jinja base templates
 
-## Page Python Structure
-...
+## Using JavaScript Libraries
+
+There are 2 ways to get JavaScript libraries for your website app:
+
+1. Downloading the JavaScript library files and putting them in `public/js/` directory to be used as a static asset
+2. Using Yarn package manager to download the package and compiling the package using ESBuild
+
+We recommend compiling JavaScript packages rather than downloading the libraries when possible so that we use only the relevant parts of the library code. We highly discourage using CDNs for loading JavaScript libraries in order to ensure long term asset availability on your website.
+
+There are 2 ways to include the JavaScript libraries in your page pages:
+
+1. Add `<script src="...">` in your page's `{% block script %}` for each individual page that requires the library
+2. Add `web_include_js = ["/assets/paralogic_web/js/aos.js"]` in `hooks.py` to include the library in for all web pages
+
+We recommend adding the libraries to specific individual pages if the library is not required in all pages to prevent loading libraries that are not required. If the library is required for all the pages then you should include it in `hooks.py`
+
+## CMS DocType Structure
+Page DocTypes, Settings, Website Generators, Data Sources, ...
 
 ## JavaScript Utilities
 ...
