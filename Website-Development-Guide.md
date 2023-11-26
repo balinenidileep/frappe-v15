@@ -46,6 +46,8 @@ To use or find the most recent compiled version of the bundle file we have multi
 * `include_style("paralogic_theme.bundle.css")` that writes `<link href="...">
 * `include_script("swiper.bundle.js")` that writes `<script src="...">
 
+Read more about Asset Bundling on https://frappeframework.com/docs/user/en/basics/asset-bundling
+
 ## Bootstrap SCSS Theme Structure
 
 Your website's main stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
