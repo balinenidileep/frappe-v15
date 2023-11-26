@@ -1,6 +1,6 @@
 ## Web Page Structure
 
-HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by [Jinja (template engine)](https://jinja.palletsprojects.com/). Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating context variables. Context variables can be to generate dynamic content for the web pages.
+HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by [Jinja (template engine)](https://jinja.palletsprojects.com/). Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating context variables. Context variables can be used to generate dynamic content for the web pages.
 
 For example to create an "About Us" page you can create the files `www/about.html` and `www/about.py` which can then be accessed by https://paralogic.io/about.
 
