@@ -52,17 +52,17 @@ To use or find the most recent compiled version of the bundle file we have multi
 
 Read more about Asset Bundling on https://frappeframework.com/docs/user/en/basics/asset-bundling
 
-## Bootstrap SCSS Theme Structure
+## SCSS Stylesheets
 
-Your website's main stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
+Your website's main stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in turn imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
 
-See [Bootstrap SCSS Theme Guide](https://github.com/ParaLogicTech/frappe/wiki/Bootstrap-SCSS-Theme-Guide) for details on how to create and implement a Bootstrap Theme Stylesheet
+See [SCSS Stylesheet Structure](https://github.com/ParaLogicTech/frappe/wiki/SCSS-Stylesheet-Structure) for details on how to create and implement a Bootstrap Theme Stylesheet
 
-## Web Page HTML/Jinja Structure
+## HTML/Jinja Web Pages
 
-HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by [Jinja (template engine)](https://jinja.palletsprojects.com/). Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating context variables. Context variables can be to generate dynamic content for the web pages.
+HTML Web Pages can be created by creating files inside your app's `www` directory. HTML files are processed by [Jinja (template engine)](https://jinja.palletsprojects.com/). Python files are treated as backend scripts responsible for providing data to the HTML/Jinja files by updating context variables. Context variables can be used to generate dynamic content for the web pages.
 
-See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web-Page-HTML-Jinja-Guide) for details on how to create web pages and integrate them with Frappe's Jinja base templates
+See [HTML Jinja Web Page Structure](https://github.com/ParaLogicTech/frappe/wiki/HTML-Jinja-Web-Page-Structure) for details on how to create web pages and integrate them with Frappe's Jinja base templates
 
 ## Using JavaScript Libraries
 
