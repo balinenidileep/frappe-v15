@@ -75,6 +75,14 @@ Bootstrap have the following variables which also become part of your CSS :root 
 * `$card-border-color`
 * `$card-bg`
 
+## Responsiveness Utilities
+
+We recommend using Bootstrap's breakpoint variables and mixins for responsiveness. We discourage hardcoding breakpoints. Some breakpoint utilities provided by Bootstrap:
+
+* `@include media-breakpoint-up(md) { ... }` apply for medium screen size breakpoint and above (inclusive)
+* `@include media-breakpoint-down(md) { ... }` apply for below medium screen size breakpoint (exclusive)
+* `@include media-breakpoint-between(sm, md) { ... }` apply for small screen size breakpoint up till medium screen size breakpoint
+
 ## Standalone SCSS Files
 
 You may want to create standalone SCSS files that do not include the whole Frappe/Bootstrap CSS code for various reasons like
