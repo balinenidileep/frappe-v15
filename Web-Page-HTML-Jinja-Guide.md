@@ -77,6 +77,10 @@ Jinja filters can be used to transform or format data. Here are some common usef
 * `truncate` to truncate a string to maximum character length
 * `trim` to strip leading and trailing whitespace
 
-## Overriding base template files
+## Overriding Base Templates
 
-navbar...
+Frappe provides base templates for different components of a web page, for example, navbar, footer, sidebar, `base.html`, `web.html`. To override templates provided by frappe or any other app you can create HTML files in your app with the same directory structure and filename as in frappe.
+
+For example the navbar HTML is defined in `frappe/templates/includes/navbar/navbar.html`. You can create the file `paralogic_web/templates/includes/navbar/navbar.html` to override it. You can start by copying the content from the original template file and making changes to your app's template.
+
+If the template is not being overriden then make sure that your app's "Hooks Resolution Order" is higher priority than frappe and other apps by going to the "Installed Applications" page in desk view and clicking on "Update Hooks Resolution Order".
