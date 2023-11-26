@@ -1,4 +1,4 @@
-Your website's main stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
+Your website's main stylesheet can be built by customizing, themeing and compiling Bootstrap v4.5+ using ESBuild to bundle and build SCSS files into a CSS file. We import Frappe's website SCSS files which in turn imports Bootstrap. Frappe provides additional variables and styling for its built in components and pages.
 
 * Create a directory for SCSS files `public/paralogic_web/scss/paralogic_theme/`
 * Keep the directory organized by splitting into multiple SCSS files: `type.scss`, `buttons.scss`, `forms.scss`, `utils.scss`, ...
