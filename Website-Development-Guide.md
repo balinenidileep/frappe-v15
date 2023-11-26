@@ -14,7 +14,9 @@ Create a new frappe app using `bench new-app` and enter relevant information whe
 
 ## Assets
 
-Keep your assets organized in your app's `public/` directory. You can access your assets using the directory: `/assets/paralogic_home/...` Always use absolute URLs for linking your assets or web pages starting with `/`. For example `/assets/paralogic_home/logo/logo.png` instead of `assets/paralogic_home/logo/logo.png`
+Keep your assets organized in your app's `public/` directory. You can access your assets using the directory: `/assets/paralogic_web/...`. For example to access your file `public/logo/logo.png`, in your browser it will be accessible by the URL `/assets/paralogic_web/logo/logo.png`
+
+Always use absolute URLs for linking your assets or web pages starting with `/`. For example `/assets/paralogic_web/logo/logo.png` instead of `assets/paralogic_web/logo/logo.png`
 
 * public/images/
 * public/images/logo/...
