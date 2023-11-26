@@ -43,8 +43,8 @@ Bundle files are also watched and built automatically when any of the files have
 To use or find the most recent compiled version of the bundle file we have multiple utility methods/Jinja filters
 
 * `bundled_asset("about.bundle.css")` that returns the URL to the most recent built file
-* `include_style("paralogic_theme.bundle.css")` that writes `<link href="...">
-* `include_script("swiper.bundle.js")` that writes `<script src="...">
+* `include_style("paralogic_theme.bundle.css")` that writes `<link href="...">`
+* `include_script("swiper.bundle.js")` that writes `<script src="...">`
 
 Read more about Asset Bundling on https://frappeframework.com/docs/user/en/basics/asset-bundling
 
