@@ -88,4 +88,9 @@ To create, bundle, and build a standalone SCSS file
 
 * Create an SCSS bundle file `public/paralogic_web/scss/about.bundle.scss` (will be built by Frappe)
 * `@import 'frappe/public/scss/website/variables'` to get access to all the SCSS variables
-* Add `{{ include_style("about.bundle.css") }}` in your page HTML file's `{% block style %}` to include it in your page
+
+There are 2 ways to include your stylesheet in your web pages:
+
+1. Add `{{ include_style("about.bundle.css") }}` in your page HTML file's `{% block style %}` to include it for each individual page the requires it
+2. Add `web_include_css = ["about.bundle.css"]` in hooks.py to include the stylesheet in all web pages
+
