@@ -74,7 +74,7 @@ We recommend compiling JavaScript packages rather than downloading the libraries
 There are 2 ways to include the JavaScript libraries in your page pages:
 
 1. Add `<script src="...">` in your page's `{% block script %}` for each individual page that requires the library
-2. Add `web_include_js = ["/assets/paralogic_web/js/aos.js"]` in `hooks.py` to include the library in for all web pages
+2. Add `web_include_js = ["/assets/paralogic_web/js/aos.js"]` in `hooks.py` to include the library in all web pages
 
 We recommend adding the libraries to specific individual pages if the library is not required in all pages to prevent loading libraries that are not required. If the library is required for all the pages then you should include it in `hooks.py`
 
