@@ -14,9 +14,9 @@ Create a new frappe app using `bench new-app` and enter relevant information whe
 
 ## Assets
 
-Keep your assets organized in your app's `public/` directory. You can access your assets using the directory: `/assets/paralogic_web/...`. For example to access your file `public/logo/logo.png`, in your browser it will be accessible by the URL `/assets/paralogic_web/logo/logo.png`
+You can store your static asset files in your app's `public/` directory. You can access your assets using the URL: `/assets/paralogic_web/...`. For example the URL to access file file `public/logo/logo.png` will be `/assets/paralogic_web/logo/logo.png`.
 
-Always use absolute URLs for linking your assets or web pages starting with `/`. For example `/assets/paralogic_web/logo/logo.png` instead of `assets/paralogic_web/logo/logo.png`
+Keep your assets organized in your app's `public/` directory. 
 
 * public/images/
 * public/images/logo/...
@@ -32,6 +32,8 @@ Always use absolute URLs for linking your assets or web pages starting with `/`.
 * public/js/
 * public/js/fullpage/...
 * public/js/aos/...
+
+Always use absolute URLs for linking your assets or web pages. Start your URLs with `/`. For example `/assets/paralogic_web/logo/logo.png` instead of `assets/paralogic_web/logo/logo.png`
 
 ## Build System
 
@@ -64,19 +66,50 @@ See [Web Page HTML Jinja Guide](https://github.com/ParaLogicTech/frappe/wiki/Web
 
 ## Using JavaScript Libraries
 
-There are 2 ways to get JavaScript libraries for your website app:
+There are 2 ways to add JavaScript libraries to your app:
 
-1. Downloading the JavaScript library files and putting them in `public/js/` directory to be used as a static asset
+1. By downloading the JavaScript library files and putting them in `public/js/` directory to be used as a static asset
 2. Using Yarn package manager to download the package and compiling the package using ESBuild
 
-We recommend compiling JavaScript packages rather than downloading the libraries when possible so that we use only the relevant parts of the library code. We highly discourage using CDNs for loading JavaScript libraries in order to ensure long term asset availability on your website.
+We recommend compiling JavaScript packages rather than downloading the libraries when possible so that only the relevant parts of the library code gets compiled. We highly discourage using CDNs for loading JavaScript libraries in order to ensure long term asset availability on your website.
 
 There are 2 ways to include the JavaScript libraries in your page pages:
 
 1. Add `<script src="...">` in your page's `{% block script %}` for each individual page that requires the library
 2. Add `web_include_js = ["/assets/paralogic_web/js/aos.js"]` in `hooks.py` to include the library in all web pages
 
-We recommend adding the libraries to specific individual pages if the library is not required in all pages to prevent loading libraries that are not required. If the library is required for all the pages then you should include it in `hooks.py`
+We recommend including the libraries in specific individual pages if the library is not required in all pages to prevent loading libraries that are not required. If the library is required for all the pages then you should include it in `hooks.py`
+
+## Compiling JavaScript Packages (Swiper example)
+
+We recommend using [Swiper](https://swiperjs.com/) for carousels and sliding content. To compile Swiper:
+
+* Make sure you are in your bench directory `cd path/to/your/bench`
+* Change directory to your app directory `cd apps/paralogic_web`
+* `yarn add swiper` will download the package and add it to your app's `package.json`
+* Create file `public/js/swiper.bundle.js`, import Swiper and expose the Swiper class
+
+```js
+import Swiper from 'swiper';
+import { Navigation, Pagination, Thumbs, Autoplay } from 'swiper/modules'; // import only the modules you need
+Swiper.use([Navigation, Pagination, Thumbs, Autoplay]); // tell swiper to use the modules
+window.Swiper = Swiper; // expose Swiper class to global `window` object
+```
+
+* Create file `public/scss/swiper.bundle.scss`, import Swiper's SCSS file and import only the modules you need
+
+```scss
+@import "../node_modules/swiper/swiper.scss";
+@import "../node_modules/swiper/modules/navigation.scss";
+@import "../node_modules/swiper/modules/pagination.scss";
+@import "../node_modules/swiper/modules/thumbs.scss";
+@import "../node_modules/swiper/modules/controller.scss";
+```
+
+* Run `bench build` to compile the bundle files
+* Add `{{ include_script("swiper.bundle.js") }}` in your page HTML file's `{% block script %}`
+* Add `{{ include_style("swiper.bundle.css") }}` in your page HTML file's `{% block style %}`
+* Write your JavaScript to use the Swiper object available as a global `window` variable
 
 ## CMS DocType Structure
 Page DocTypes, Settings, Website Generators, Data Sources, ...
