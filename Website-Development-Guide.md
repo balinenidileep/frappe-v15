@@ -126,6 +126,9 @@ Page DocTypes, Settings, Website Generators, Data Sources, ...
 ## Images
 ...
 
+## Buttons
+Style for themes, style for `:hover, :focus`, style for `:active`
+
 ## SEO
 ...
 
