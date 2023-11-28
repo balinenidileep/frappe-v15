@@ -120,11 +120,32 @@ See [Website CMS Structure](https://github.com/ParaLogicTech/frappe/wiki/Website
 ## JavaScript Utilities
 ...
 
+## HTML Semantic Tags
+
+See https://www.w3schools.com/html/html5_semantic_elements.asp for a list of all semantic tags. Some of the important semantic tags:
+
+* `<section>` for main section container
+* `<article>` for news/blog articles, product information, ...
+* `<figure>` and `<figcaption>` for illustrations with captions
+* `<time>` for date/time
+
+## Dark Section
+...
+
+## Padding
+
+x padding and y padding should be the same in most cases
+
 ## Favicon
 ...
 
 ## Images
-...
+
+* Always lazy load images (except for icons and very small images) `<img loading="lazy">`
+* Add relevant alternate text `<img alt="Next">`
+* Never let the image distort: Either object-fit or one dimension max-width/height and other dimension fluid
+
+## SVG Bundles
 
 ## Buttons
 Style for themes, style for `:hover, :focus`, style for `:active`
