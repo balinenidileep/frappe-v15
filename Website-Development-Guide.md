@@ -111,13 +111,13 @@ window.Swiper = Swiper; // expose Swiper class to global `window` object
 * Add `{{ include_style("swiper.bundle.css") }}` in your page HTML file's `{% block style %}`
 * Write your JavaScript to use the Swiper object available as a global `window` variable
 
-## CMS DocType Structure
-Page DocTypes, Settings, Website Generators, Data Sources, ...
+## Website CMS Structure
+
+You can make your web pages dynamic and editable by creating DocTypes for individual pages and listings. You can then use the DocTypes for updating the context of your web pages. The context can then by used by your Jinja templates to generate content from your database. Frappe provides a "Desk" view for your admin users to configure the system and modify content without having to design an admin panel yourself.
+
+See [Website CMS Structure](https://github.com/ParaLogicTech/frappe/wiki/Website-CMS-Structure) for details on how to create DocTypes and make your web pages dynamic.
 
 ## JavaScript Utilities
-...
-
-## CMS Settings
 ...
 
 ## Favicon
