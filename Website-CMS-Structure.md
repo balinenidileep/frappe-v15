@@ -75,6 +75,25 @@ Keep your DocType organized and robust
 * Use Small Text or Text or Long Text to allow long texts
 * Use HTML Editor if the input is meant to be in HTML
 
+## DocType Controller for CMS
+
+When you create a DocType in developer mode, it will create a directory in your app like `paralogic_web/doctype/website_homepage/` with files:
+
+* `website_homepage.py` backend controller
+* `website_homepage.js` frontend client script
+* `website_homepage.json` DocType Meta exported as JSON
+
+To add back end validations and triggers on modifying the document you can update your backend controller. One important code to add in your backend controller is cache invalidation:
+
+```python
+class WebsiteHomepage(Document):
+	def on_update(self):
+		from frappe.website.utils import clear_cache
+		clear_cache()
+```
+
+The `clear_cache` method can either clear cache for a specific route or clear cache for the whole website. To be safe we will clear cache for the whole website when ever the Website Homepage document is updated/saved.
+
 ## Page DocType (Single DocType)
 
 To make a web page dynamic, you can create a Single DocType. A Single DocType is a DocType that has only one record in the database instead of a list of records. When making a DocType, make sure to enable the "Is Single" checkbox.
@@ -84,7 +103,27 @@ To add data from your Page DocType into your Jinja context, you can include the 
 ```python
 def get_context(context):
 	context.title = context.data.title or "ParaLogic"
-	context.data = frappe.get_single("ParaLogic Homepage")
+	context.data = frappe.get_single("Website Homepage")
+
+	services = frappe.get_all("Website Service",
+		filters={'show_on_homepage': 1},
+		order_by="sorting_index, creation")
+
+	context.services = [frappe.get_doc("Website Service", d.name) for d in services]
+```
+
+To use the data you added to your Jinja context you can access all the keys you added in the `context` object in your Jinja template
+
+```Jinja
+<h1>{{ data.subtitle }}</h1>
+
+<p>{{ data.get_formatted("introduction") }}</p>
+
+<ul>
+{% for service in services %}
+	<li>{{ service.name }}</li>
+{% endfor %}
+</ul>
 ```
 
 ## Listing DocType (Generators)
