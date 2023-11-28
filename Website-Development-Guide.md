@@ -141,7 +141,7 @@ x padding and y padding should be the same in most cases
 
 ## Images
 
-* Always lazy load images (except for icons and very small images) `<img loading="lazy">`
+* Lazy load images (except for logos, icons and very small images) `<img loading="lazy">`
 * Add relevant alternate text `<img alt="Next">`
 * Never let the image distort: Either object-fit or one dimension max-width/height and other dimension fluid
 
