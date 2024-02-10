@@ -52,6 +52,20 @@ sudo service nginx reload
 
 **Configure Lets Encrypt SSL**
 
+Install certbot
+
 ```bash
-sudo bench setup lets-encrypt site_name
+sudo snap install --classic certbot
+```
+
+If your domain name is the same as your site name
+
+```bash
+sudo bench setup lets-encrypt [site-name]
+```
+
+If your domain name and site name are different
+
+```bash
+sudo bench setup lets-encrypt [site-name] --custom-domain [custom-domain]
 ```
