@@ -9,11 +9,11 @@ sudo adduser frappe
 **Add user to sudo group**
 
 ```bash
-usermod -aG sudo frappe
+sudo usermod -aG sudo frappe
 ```
 
 **Switch to new user**
 
 ```bash
-su - frappe
+sudo su - frappe
 ```
