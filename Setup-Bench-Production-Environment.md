@@ -36,6 +36,8 @@ sudo ln -s `pwd`/config/nginx.conf /etc/nginx/conf.d/frappe-bench.conf
 
 Open the file `/etc/nginx/nginx.conf` in a text editor of choice
 
+Change user `user www-data;` to `user frappe;`
+
 Add the below piece of code inside http as shown in the section following the code snippet:
 
 ```
