@@ -63,7 +63,7 @@ sudo apt install software-properties-common
 We recommend installing node using [nvm](https://github.com/creationix/nvm)
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.bashrc
 ```
 
