@@ -187,6 +187,7 @@ After the frappe-bench folder is created, download frappe applications (optional
 
 ```bash
 bench get-app payments
+bench get-app https://github.com/ParaLogicTech/crm.git --branch version-14
 bench get-app https://github.com/ParaLogicTech/erpnext.git --branch version-14
 ```
 
