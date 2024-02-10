@@ -11,3 +11,9 @@ sudo adduser frappe
 ```bash
 usermod -aG sudo frappe
 ```
+
+**Switch to new user**
+
+```bash
+su - frappe
+```
