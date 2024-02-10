@@ -14,7 +14,7 @@ bench config dns_multitenant on
 **Configure sudoers**
 
 ```bash
-sudo bench setup sudoers [linux_user_name]
+sudo bench setup sudoers [linux-user-name]
 ```
 
 **Add supervisor configuration**
