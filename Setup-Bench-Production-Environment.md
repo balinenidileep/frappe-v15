@@ -11,6 +11,12 @@ sudo apt install nginx
 bench config dns_multitenant on
 ```
 
+**Configure sudoers**
+
+```bash
+sudo bench setup sudoers [linux_user_name]
+```
+
 **Add supervisor configuration**
 
 ```bash
