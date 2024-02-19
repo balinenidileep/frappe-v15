@@ -90,7 +90,7 @@ npm install -g yarn
 Download wkhtmltopdf dependencies and fonts
 
 ```bash
-sudo apt install xvfb libfontconfig xfonts-75dpi
+sudo apt install xvfb fontconfig libxrender1 libfontconfig xfonts-75dpi
 ```
 
 Download wkhtmltopdf from https://wkhtmltopdf.org/downloads.html
