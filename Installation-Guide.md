@@ -70,7 +70,7 @@ source ~/.bashrc
 After nvm is installed, you may have to close your terminal and open another one. Now run the following command to install node.
 
 ```bash
-nvm install 16
+nvm install 18
 ```
 
 Verify the installation, by running:
