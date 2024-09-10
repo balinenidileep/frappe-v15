@@ -40,10 +40,10 @@ sudo apt install git
 sudo apt install curl
 ```
 
-**Install Python** (python3.10+)
+**Install Python** (python3.11)
 
 ```bash
-sudo apt install python3 python3-dev python3.10-dev python3-setuptools python3-pip python3-distutils python3.10-venv
+sudo apt install python3 python3-dev python3.11-dev python3-setuptools python3-pip python3-distutils python3.11-venv
 ```
 
 **Install Redis Server**
@@ -179,7 +179,7 @@ cd frappe
 Create your first bench environment / folder
 
 ```bash
-bench init frappe-bench --frappe-path https://github.com/ParaLogicTech/frappe.git --frappe-branch version-14 --python python3.10
+bench init frappe-bench --frappe-path https://github.com/ParaLogicTech/frappe.git --frappe-branch version-14 --python python3.11
 cd frappe-bench
 ```
 
