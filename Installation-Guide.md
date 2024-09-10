@@ -15,9 +15,9 @@ This guide is tested on Ubuntu 20.04
 ### Pre-requisites
 
 ```
-Python 3.10+ (For v14) / Python 3.7 (For v12)
-Node.js 16
-Redis 6                                       (caching and realtime updates)
+Python 3.10+ (Python 3.11+ recommended)
+Node.js 18+
+Redis 6+                                      (caching and realtime updates)
 MariaDB 10.6.6+                               (Database backend)
 yarn 1.12+                                    (js dependency manager)
 pip 20+                                       (py dependency manager)
