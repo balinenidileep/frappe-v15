@@ -194,13 +194,13 @@ bench get-app https://github.com/ParaLogicTech/erpnext.git --branch version-15
 Setup a new site (database)
 
 ```bash
-bench new-site paralogic.v14 --db-name paralogic_v14_erp
+bench new-site paralogic.v15 --db-name paralogic_v15_erp
 ```
 
-Set the `paralogic.v14` site as the default site for this bench
+Set the `paralogic.v15` site as the default site for this bench
 
 ```bash
-bench use paralogic.v14
+bench use paralogic.v15
 ```
 
 Add site in `hosts` file
@@ -212,14 +212,14 @@ sudo nano /etc/hosts
 and add the line
 
 ```
-127.0.0.1       paralogic.v14
+127.0.0.1       paralogic.v15
 ```
 or use bench command to add site to hosts file
 ```bash
 bench add-to-hosts
 ```
 
-Install applications on site `paralogic.v14`
+Install applications on site `paralogic.v15`
 
 ```bash
 bench install-app erpnext
@@ -243,7 +243,7 @@ After starting the bench you will see that web server will be running on port 80
 Access the site using a web browser from the hostname you set in hosts file
 
 ```
-http://paralogic.v14:8000
+http://paralogic.v15:8000
 ```
 
 Congratulations, your bench is now installed and working on your system.
